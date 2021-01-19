@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<meta charser="UTF-8">
+</head>
+<body>
+	<div>Welcome to the Haaga-Helia!</div>
+	<table>
+		<tr th:each="student: ${students}">
+			<td th:text="${student.getFirstname()}" />
+			<td th:text="${student.getLastname()}" />
+		</tr>
+	</table>
+</body>
+</html>
