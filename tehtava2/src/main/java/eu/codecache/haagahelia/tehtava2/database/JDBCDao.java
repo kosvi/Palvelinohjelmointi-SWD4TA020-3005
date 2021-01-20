@@ -1,4 +1,9 @@
-package database;
+/*
+ * This is just a quick and nasty setup for storing those names
+ */
+
+
+package eu.codecache.haagahelia.tehtava2.database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -8,11 +13,13 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import domain.Friend;
+import eu.codecache.haagahelia.tehtava2.domain.Friend;
 
 public class JDBCDao {
 
-	private static final String JDBC_URL = "jdbc:sqlite:/home/ldap/ville/Opiskelu/Palvelinohjelmointi/tehtava2.sqlite";
+//	private static final String JDBC_URL = "jdbc:sqlite:/home/ldap/ville/Opiskelu/Palvelinohjelmointi/tehtava2.sqlite";
+	// to make this app work properly, set JDBC_PATH to a valid location
+	private static final String JDBC_URL = "jdbc:sqlite:" + System.getenv("JDBC_PATH");
 	private static final String TABLE_NAME = "friends";
 
 	public JDBCDao() {

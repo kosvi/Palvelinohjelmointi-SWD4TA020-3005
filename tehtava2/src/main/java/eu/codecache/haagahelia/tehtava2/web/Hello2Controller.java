@@ -8,7 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import domain.Student;
+import eu.codecache.haagahelia.tehtava2.domain.Student;
 
 @Controller
 public class Hello2Controller {

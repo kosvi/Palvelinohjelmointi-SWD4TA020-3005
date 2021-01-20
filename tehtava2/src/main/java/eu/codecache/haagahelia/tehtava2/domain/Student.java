@@ -1,4 +1,4 @@
-package domain;
+package eu.codecache.haagahelia.tehtava2.domain;
 
 public class Student implements Comparable<Student> {
 	private String firstname;

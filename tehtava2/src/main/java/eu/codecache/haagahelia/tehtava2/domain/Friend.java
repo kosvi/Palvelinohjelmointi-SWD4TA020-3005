@@ -1,8 +1,10 @@
-package domain;
+package eu.codecache.haagahelia.tehtava2.domain;
 
+import javax.validation.constraints.Size;
 
 public class Friend implements Comparable<Friend> {
 	private long id;
+	@Size(min=2, max=50)
 	private String name;
 
 	public Friend() {

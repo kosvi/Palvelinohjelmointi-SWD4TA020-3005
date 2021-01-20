@@ -12,10 +12,16 @@
 		</tr>
 	</table>
 	<h1>Add new friend</h1>
-	<form action="#" th:action="@{/index}" th:object="${name}" method="post">
-		Name: <input type="text" th:field="*{name}"/> 
-		<input type="submit"
-			value="Submit" />
+	<form action="#" th:action="@{/index}" th:object="${name}"
+		method="post">
+		<table>
+			<tr>
+				<td>Name:</td>
+				<td><input type="text" th:field="*{name}" /></td>
+				<td th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</td>
+			</tr>
+		</table>
+		<input type="submit" value="Submit" />
 	</form>
 </body>
 </html>
