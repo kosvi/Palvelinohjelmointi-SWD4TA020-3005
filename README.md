@@ -4,8 +4,9 @@ Haaga-Helian palvelinohjelmointikurssi kevät 2021
 
 ## Tehtävät
 
-- [x] [Tehtävä 1](/tehtava1) *Completed: 18.01.2021*
-- [x] [Tehtävä 2](/tehtava2) *Completed: 20.01.2021*
+- Tehtävälista
+  - [x] [Tehtävä 1](/tehtava1) Johdanto *Completed: 18.01.2021*
+  - [x] [Tehtävä 2](/tehtava2) Model & View *Completed: 20.01.2021*
 
 ## Harjoitusprojekti
 
