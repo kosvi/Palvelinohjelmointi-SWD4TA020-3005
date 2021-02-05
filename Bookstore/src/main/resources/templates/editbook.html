@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+	<h1>Add book</h1>
+	<form th:object="${book}" th:action="@{save}" action="#" method="post">
+		<input type="hidden" id="id" th:field="*{id}" />
+		<table>
+			<tr>
+				<td>Title:</td>
+				<td><input type="text" id="title" th:field="*{title}" /></td>
+				<td th:if="${#fields.hasErrors('title')}" th:errors="*{title}">Title
+					error</td>
+			</tr>
+			<tr>
+				<td>Author:</td>
+				<td><input type="text" id="author" th:field="*{author}" /></td>
+				<td th:if="${#fields.hasErrors('author')}" th:errors="*{author}">Author
+					error</td>
+			</tr>
+			<tr>
+				<td>Year:</td>
+				<td><input type="text" id="year" th:field="*{year}" /></td>
+				<td th:if="${#fields.hasErrors('year')}" th:errors="*{year}">Year
+					error</td>
+			</tr>
+			<tr>
+				<td>ISBN:</td>
+				<td><input type="text" id="isbn" th:field="*{isbn}" /></td>
+				<td th:if="${#fields.hasErrors('isbn')}" th:errors="*{isbn}">ISBN
+					error</td>
+			</tr>
+			<tr>
+				<td>Price:</td>
+				<td><input type="text" id="price" th:field="*{price}" /></td>
+				<td th:if="${#fields.hasErrors('price')}" th:errors="*{price}">Price
+					error</td>
+			</tr>
+			<tr>
+				<td colspan="3"><input type="submit" value="Save" /></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
