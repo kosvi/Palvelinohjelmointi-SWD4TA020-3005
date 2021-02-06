@@ -2,6 +2,7 @@ package eu.codecache.haagahelia.Bookstore.web;
 
 import eu.codecache.haagahelia.Bookstore.model.Book;
 import eu.codecache.haagahelia.Bookstore.model.BookRepository;
+import eu.codecache.haagahelia.Bookstore.model.CategoryRepository;
 
 import javax.validation.Valid;
 
@@ -19,6 +20,8 @@ public class BookController {
 
 	@Autowired
 	private BookRepository repository;
+	@Autowired
+	private CategoryRepository categoriesRepo;
 
 	@GetMapping("/index")
 	public String home(Model model) {
@@ -34,12 +37,14 @@ public class BookController {
 	@GetMapping("/add")
 	public String addBook(Model model) {
 		model.addAttribute(new Book());
+		model.addAttribute("categories", categoriesRepo.findAll());
 		return "addbook";
 	}
 
 	@GetMapping("/edit/{id}")
 	public String editBook(@PathVariable("id") Long bookId, Model model) {
 		model.addAttribute("book", repository.findById(bookId));
+		model.addAttribute("categories", categoriesRepo.findAll());
 		return "editbook";
 	}
 
