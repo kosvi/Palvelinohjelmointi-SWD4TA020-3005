@@ -13,7 +13,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class BookController {
@@ -72,4 +71,8 @@ public class BookController {
 		return "redirect:../booklist";
 	}
 
+	@GetMapping("/login")
+	public String loginForm(Model model) {
+		return "login";
+	}
 }

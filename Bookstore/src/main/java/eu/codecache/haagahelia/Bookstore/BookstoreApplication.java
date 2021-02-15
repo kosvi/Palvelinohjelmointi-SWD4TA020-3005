@@ -20,10 +20,12 @@ public class BookstoreApplication {
 	@Bean
 	public CommandLineRunner bookStore(BookRepository repository, CategoryRepository categories) {
 		return (args) -> {
-			categories.save(new Category("Loistava!"));
-			categories.save(new Category("Toiminta"));
-//			repository.save(new Book("Tuntematon sotilas", "Väinö Linna", 1954, "xxx", 20.90));
-//			repository.save(new Book("Conan taistelija", "Robert E. Howard", 1990, "951-8954-55-0", 99.90));
+			Category c1 = new Category("Loistava!");
+			Category c2 = new Category("Toiminta");
+			categories.save(c1);
+			categories.save(c2);
+			repository.save(new Book("Tuntematon sotilas", "Väinö Linna", 1954, "xxx", 20.90, c1));
+			repository.save(new Book("Conan taistelija", "Robert E. Howard", 1990, "951-8954-55-0", 99.90, c2));
 		};
 	}
 

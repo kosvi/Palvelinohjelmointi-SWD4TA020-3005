@@ -11,6 +11,8 @@ import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Book {
 
@@ -28,6 +30,7 @@ public class Book {
 	@DecimalMax("1000.0")
 	private double price;
 	@ManyToOne
+	@JsonIgnore
 	@JoinColumn(name = "categoryid")
 	private Category category;
 
